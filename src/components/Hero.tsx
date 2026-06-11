@@ -67,25 +67,10 @@ const Hero = ({ ready }: HeroProps) => {
           para la Ciudad de México.
         </p>
 
-        <p className="blur-in [filter:blur(10px)] translate-y-5 text-sm md:text-base text-muted max-w-md mb-12">
+        <p className="blur-in [filter:blur(10px)] translate-y-5 text-sm md:text-base text-muted max-w-md">
           Dejar atrás el comercial tradicional: videos que se sienten parte de las redes,
           que la gente quiere ver y compartir.
         </p>
-
-        <div className="blur-in [filter:blur(10px)] translate-y-5 inline-flex gap-4">
-          <a
-            href="#formatos"
-            className="rounded-full text-sm px-7 py-3.5 bg-text-primary text-bg font-medium transition-all hover:scale-105 hover:bg-bg hover:text-text-primary hover:[box-shadow:0_0_0_2px_#9F2241,0_0_8px_rgba(159,34,65,0.35)]"
-          >
-            Ver formatos
-          </a>
-          <a
-            href="#contacto"
-            className="rounded-full text-sm px-7 py-3.5 border-2 border-stroke bg-bg transition-all hover:scale-105 hover:border-transparent hover:[box-shadow:0_0_0_2px_#9F2241,0_0_8px_rgba(159,34,65,0.35)]"
-          >
-            Hablemos
-          </a>
-        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">

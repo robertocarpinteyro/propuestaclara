@@ -49,22 +49,6 @@ const Contacto = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-6xl font-display italic mb-6">
-            ¿Arrancamos con un piloto?
-          </h2>
-          <p className="text-muted max-w-lg mx-auto mb-8">
-            Sugerencia: el podcast “Clara Escucha” o un Cineminuto de una obra emblemática.
-          </p>
-          <a
-            href="mailto:hola@ejemplo.mx"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-stroke bg-bg px-8 py-4 text-sm transition-all hover:scale-105 hover:border-transparent hover:[box-shadow:0_0_0_2px_#9F2241,0_0_8px_rgba(159,34,65,0.35)]"
-          >
-            Hablemos <span aria-hidden>↗</span>
-          </a>
-        </div>
-
         {/* Próximos pasos */}
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 grid md:grid-cols-3 gap-6 mb-16">
           {proximosPasos.map((paso, i) => (
@@ -78,12 +62,7 @@ const Contacto = () => {
 
         {/* Barra de footer */}
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-stroke/50 pt-6 text-xs text-muted">
-          <div className="flex gap-5">
-            <a href="#" className="hover:text-text-primary transition-colors">Instagram</a>
-            <a href="#" className="hover:text-text-primary transition-colors">TikTok</a>
-            <a href="#" className="hover:text-text-primary transition-colors">YouTube</a>
-            <a href="#" className="hover:text-text-primary transition-colors">Facebook</a>
-          </div>
+          <span>La Ciudad que Cuida · Propuesta 2026</span>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-dot" />
             Disponible para arrancar

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import SectionHeader from "./SectionHeader";
 import MediaVideo from "./MediaVideo";
 import { formatos } from "../data/content";
@@ -75,12 +76,12 @@ const Formatos = () => (
       </div>
 
       <div className="mt-10 text-center">
-        <a
-          href="#contacto"
+        <Link
+          to="/galeria"
           className="hidden md:inline-flex items-center gap-2 rounded-full border border-stroke px-7 py-3.5 text-sm transition-all hover:border-transparent hover:[box-shadow:0_0_0_1px_#9F2241,0_0_8px_rgba(159,34,65,0.35)]"
         >
           Ver todo el material <span aria-hidden>↗</span>
-        </a>
+        </Link>
       </div>
     </div>
   </section>

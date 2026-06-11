@@ -16,11 +16,17 @@ export const cloudinaryImage = (publicId: string) => `${IMAGE_BASE}/${publicId}`
 
 export const isMediaReady = (url: string) => !url.includes("<PENDIENTE>");
 
+/** Cineminuto — también se usa como reel del hero/footer */
+const CINEMINUTO_URL =
+  "https://res.cloudinary.com/dxcr9utre/video/upload/f_auto,q_auto/v1781158563/Prueba1_1_ksgc1l.mp4";
+const CINEMINUTO_POSTER =
+  "https://res.cloudinary.com/dxcr9utre/video/upload/so_0,f_auto,q_auto/v1781158563/Prueba1_1_ksgc1l.jpg";
+
 export const media = {
-  heroReel: cloudinaryVideo("reels/general"),
-  heroPoster: cloudinaryPoster("reels/general"),
+  heroReel: CINEMINUTO_URL,
+  heroPoster: CINEMINUTO_POSTER,
   reels: {
-    cineminuto: cloudinaryVideo("reels/cineminuto"),
+    cineminuto: CINEMINUTO_URL,
     color: cloudinaryVideo("reels/color"),
     faceToFace: cloudinaryVideo("reels/face-to-face"),
     podcast: cloudinaryVideo("reels/podcast"),
