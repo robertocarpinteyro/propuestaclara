@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 0 0% 4%;
+  --surface: 0 0% 8%;
+  --text: 0 0% 96%;
+  --muted: 0 0% 53%;
+  --stroke: 0 0% 14%;
+  --accent: 340 53% 41%; /* guinda CDMX (#9F2241 aprox) */
+  --verde: 158 59% 26%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-text-primary font-body antialiased;
+}
+
+.accent-gradient {
+  background: linear-gradient(90deg, #d98aa6 0%, #9f2241 100%);
+}
+
+.accent-gradient-glow {
+  background: linear-gradient(90deg, #d98aa6 0%, #9f2241 100%);
+  box-shadow: 0 0 8px rgba(159, 34, 65, 0.35);
+}
+
+/* Borde de gradiente guinda: wrapper con padding 1px */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(90deg, #d98aa6 0%, #9f2241 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+  padding: 1px;
+}
+
+/* Halftone overlay para tarjetas de formato */
+.halftone {
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* Estado inicial de animaciones GSAP del hero */
+.name-reveal,
+.blur-in {
+  opacity: 0;
+}
+
+/* Scrollbar discreto */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--stroke));
+  border-radius: 5px;
+}
