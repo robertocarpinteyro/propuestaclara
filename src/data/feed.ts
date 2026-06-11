@@ -5,6 +5,7 @@ import { cloudinaryImage } from "./media";
  * Handle y métricas a confirmar con el cliente.
  */
 export const profile = {
+  avatar: "/avatar.jpg",
   handle: "claragob", // a confirmar
   nombre: "Clara Brugada",
   bio: ["Jefa de Gobierno de la Ciudad de México", "💜 La Ciudad que Cuida"],

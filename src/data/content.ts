@@ -169,18 +169,3 @@ export const frecuencias = [
   },
   { formato: "Servicios", frecuencia: "1 por semana", publica: "Redes" },
 ];
-
-export const proximosPasos = [
-  {
-    titulo: "Elegir un piloto",
-    descripcion: "Definir el primer producto a producir.",
-  },
-  {
-    titulo: "Reunir referencias",
-    descripcion: "Fotos, locaciones y videos de ejemplo.",
-  },
-  {
-    titulo: "Plan de producción",
-    descripcion: "Calendario, equipo y entregables por plataforma.",
-  },
-];

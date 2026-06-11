@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import MediaVideo from "./MediaVideo";
 import { media } from "../data/media";
-import { proximosPasos } from "../data/content";
 
 const Contacto = () => {
   const marqueeRef = useRef<HTMLDivElement>(null);
@@ -47,17 +46,6 @@ const Contacto = () => {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* Próximos pasos */}
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 grid md:grid-cols-3 gap-6 mb-16">
-          {proximosPasos.map((paso, i) => (
-            <div key={paso.titulo} className="bg-surface/50 border border-stroke rounded-2xl p-6 backdrop-blur-sm">
-              <span className="text-xs text-muted tabular-nums">0{i + 1}</span>
-              <h3 className="font-display italic text-lg mt-2 mb-1">{paso.titulo}</h3>
-              <p className="text-sm text-muted">{paso.descripcion}</p>
-            </div>
-          ))}
         </div>
 
         {/* Barra de footer */}

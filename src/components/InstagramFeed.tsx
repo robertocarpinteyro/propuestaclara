@@ -55,9 +55,11 @@ const InstagramFeed = () => {
           <div className="px-4 py-4">
             <div className="flex items-center gap-6">
               <div className="p-[3px] rounded-full accent-gradient shrink-0">
-                <div className="w-[80px] h-[80px] rounded-full border-2 border-white bg-gradient-to-br from-[#9F2241] to-[#D98AA6] flex items-center justify-center text-white font-display italic text-2xl">
-                  CB
-                </div>
+                <img
+                  src={profile.avatar}
+                  alt={profile.nombre}
+                  className="w-[80px] h-[80px] rounded-full border-2 border-white object-cover"
+                />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-1.5 mb-2">

@@ -1,10 +1,15 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SectionHeader from "./SectionHeader";
 import MediaVideo from "./MediaVideo";
-import { formatos } from "../data/content";
+import { formatos, type Formato } from "../data/content";
+import { isMediaReady } from "../data/media";
 
-const Formatos = () => (
+const Formatos = () => {
+  const [lightbox, setLightbox] = useState<Formato | null>(null);
+
+  return (
   <section id="formatos" className="bg-bg py-12 md:py-16">
     <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
       <SectionHeader
@@ -64,11 +69,14 @@ const Formatos = () => (
                 </p>
               </div>
               <div className="pt-4">
-                <span className="gradient-border inline-flex rounded-full">
+                <button
+                  onClick={() => setLightbox(f)}
+                  className="gradient-border inline-flex rounded-full transition-transform hover:scale-105"
+                >
                   <span className="rounded-full bg-bg px-4 py-1.5 text-xs">
                     Ver — <span className="font-display italic">{f.nombre}</span>
                   </span>
-                </span>
+                </button>
               </div>
             </div>
           </motion.article>
@@ -84,7 +92,58 @@ const Formatos = () => (
         </Link>
       </div>
     </div>
+
+    {/* Lightbox de video */}
+    <AnimatePresence>
+      {lightbox && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 md:p-10"
+          onClick={() => setLightbox(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.92 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.92 }}
+            className="relative w-full max-w-5xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {isMediaReady(lightbox.video) ? (
+              <video
+                src={lightbox.video}
+                className="w-full max-h-[80vh] rounded-2xl bg-black object-contain"
+                autoPlay
+                controls
+                playsInline
+              />
+            ) : (
+              <div className="w-full aspect-video rounded-2xl border border-stroke bg-gradient-to-br from-[#2a0a14] via-surface to-bg flex items-center justify-center">
+                <span className="text-xs uppercase tracking-[0.3em] text-muted/60">
+                  Próximamente · {lightbox.nombre}
+                </span>
+              </div>
+            )}
+            <div className="mt-4 flex items-baseline gap-3">
+              <h3 className="text-xl font-display italic">{lightbox.nombre}</h3>
+              <span className="text-xs uppercase tracking-[0.2em] text-muted">
+                {lightbox.duracion} · {lightbox.orientacion}
+              </span>
+            </div>
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-surface border border-stroke text-white hover:bg-stroke transition-colors"
+              aria-label="Cerrar"
+            >
+              ✕
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   </section>
-);
+  );
+};
 
 export default Formatos;

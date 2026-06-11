@@ -5,7 +5,6 @@ const links = [
   { label: "Formatos", href: "#formatos" },
   { label: "Feed", href: "#feed" },
   { label: "Enfoque", href: "#enfoque" },
-  { label: "Contacto", href: "#contacto" },
 ];
 
 const Navbar = () => {
@@ -25,14 +24,6 @@ const Navbar = () => {
           scrolled ? "shadow-lg shadow-black/40" : ""
         }`}
       >
-        <a href="#inicio" className="group gradient-border rounded-full hover:[background:linear-gradient(270deg,#D98AA6_0%,#9F2241_100%)]">
-          <span className="flex w-9 h-9 items-center justify-center rounded-full bg-bg font-display italic text-sm">
-            CC
-          </span>
-        </a>
-
-        <span className="hidden sm:block w-px h-5 bg-stroke" />
-
         <div className="flex items-center">
           {links.map((link) => (
             <a
@@ -49,15 +40,6 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-
-        <span className="hidden sm:block w-px h-5 bg-stroke" />
-
-        <a
-          href="#contacto"
-          className="hidden sm:inline-flex items-center gap-1 text-xs sm:text-sm rounded-full border border-stroke px-3.5 py-1.5 transition-all hover:border-transparent hover:[box-shadow:0_0_0_1px_#9F2241,0_0_8px_rgba(159,34,65,0.35)]"
-        >
-          Hablemos <span aria-hidden>↗</span>
-        </a>
       </div>
     </nav>
   );
