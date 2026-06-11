@@ -22,12 +22,16 @@ const CINEMINUTO_URL =
 const CINEMINUTO_POSTER =
   "https://res.cloudinary.com/dxcr9utre/video/upload/so_0,f_auto,q_auto/v1781158563/Prueba1_1_ksgc1l.jpg";
 
+/** Color — reel contemplativo ("la ola") */
+const COLOR_URL =
+  "https://res.cloudinary.com/dxcr9utre/video/upload/f_auto,q_auto/v1781168026/OLA_MA%CC%81S_GRANDE_fzuxpf.mp4";
+
 export const media = {
   heroReel: CINEMINUTO_URL,
   heroPoster: CINEMINUTO_POSTER,
   reels: {
     cineminuto: CINEMINUTO_URL,
-    color: cloudinaryVideo("reels/color"),
+    color: COLOR_URL,
     faceToFace: cloudinaryVideo("reels/face-to-face"),
     podcast: cloudinaryVideo("reels/podcast"),
     servicios: cloudinaryVideo("reels/servicios"),
