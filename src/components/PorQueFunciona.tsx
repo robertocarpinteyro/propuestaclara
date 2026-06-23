@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
-import { chipsImpacto, frecuencias, porQueFunciona } from "../data/content";
+import { chipsImpacto, frecuencias, porQueFunciona, ventajaLogistica } from "../data/content";
 
 const PorQueFunciona = () => (
   <section id="por-que" className="bg-bg py-16 md:py-24">
@@ -48,30 +48,41 @@ const PorQueFunciona = () => (
         transition={{ duration: 0.6 }}
       >
         <h3 className="text-2xl md:text-3xl mb-6">
-          Frecuencia <span className="font-display italic">sugerida</span>
+          Matriz de formatos, <span className="font-display italic">frecuencia y publicación</span>
           <span className="block text-sm text-muted font-body mt-2">
-            Propuesta base, ajustable según calendario y eventos.
+            Estilo visual, audio y objetivo estratégico de cada pieza. Propuesta base, ajustable según calendario y eventos.
           </span>
         </h3>
         <div className="bg-surface rounded-2xl border border-stroke overflow-x-auto">
-          <table className="w-full text-sm min-w-[560px]">
+          <table className="w-full text-sm min-w-[820px]">
             <thead>
               <tr className="border-b border-stroke text-left text-xs uppercase tracking-[0.2em] text-muted">
                 <th className="px-6 py-4 font-medium">Formato</th>
                 <th className="px-6 py-4 font-medium">Frecuencia</th>
                 <th className="px-6 py-4 font-medium">Publica en</th>
+                <th className="px-6 py-4 font-medium">Estilo visual y audio</th>
+                <th className="px-6 py-4 font-medium">Objetivo estratégico</th>
               </tr>
             </thead>
             <tbody>
               {frecuencias.map((fila) => (
-                <tr key={fila.formato} className="border-b border-stroke/50 last:border-0">
-                  <td className="px-6 py-4 font-display italic text-base">{fila.formato}</td>
-                  <td className="px-6 py-4">{fila.frecuencia}</td>
-                  <td className="px-6 py-4 text-muted">{fila.publica}</td>
+                <tr key={fila.formato} className="border-b border-stroke/50 last:border-0 align-top">
+                  <td className="px-6 py-4 font-display italic text-base whitespace-nowrap">{fila.formato}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{fila.frecuencia}</td>
+                  <td className="px-6 py-4 text-muted whitespace-nowrap">{fila.publica}</td>
+                  <td className="px-6 py-4 text-muted min-w-[220px]">{fila.estilo}</td>
+                  <td className="px-6 py-4 text-muted min-w-[220px]">{fila.objetivo}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-stroke bg-surface/40 p-6 md:p-8">
+          <h4 className="text-xs uppercase tracking-[0.3em] text-accent mb-3">
+            Ventaja logística
+          </h4>
+          <p className="text-sm text-muted max-w-3xl">{ventajaLogistica}</p>
         </div>
       </motion.div>
     </div>

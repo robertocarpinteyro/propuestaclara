@@ -4,6 +4,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Formatos from "../components/Formatos";
+import ParrillaSemanal from "../components/ParrillaSemanal";
 import InstagramFeed from "../components/InstagramFeed";
 import Enfoque from "../components/Enfoque";
 import ComoLoHacemos from "../components/ComoLoHacemos";
@@ -23,6 +24,7 @@ const Index = () => {
       <main>
         <Hero ready={!isLoading} />
         <Formatos />
+        <ParrillaSemanal />
         <InstagramFeed />
         <Enfoque />
         <ComoLoHacemos />
